@@ -1,0 +1,15 @@
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.deps.json
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.runtimeconfig.json
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.runtimeconfig.dev.json
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.dll
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.pdb
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/GraffitiVR.Model.dll
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/bin/Debug/netcoreapp2.0/GraffitiVR.Model.pdb
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/obj/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.csproj.CoreCompileInputs.cache
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/obj/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.AssemblyInfoInputs.cache
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/obj/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.AssemblyInfo.cs
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/obj/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.dll
+/home/mrosario/dev/graffiti_vr/GraffitiVR.Model.Tests/obj/Debug/netcoreapp2.0/GraffitiVR.Model.Tests.pdb

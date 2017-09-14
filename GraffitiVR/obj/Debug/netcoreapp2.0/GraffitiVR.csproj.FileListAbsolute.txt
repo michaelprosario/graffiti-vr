@@ -1,0 +1,12 @@
+/home/mrosario/dev/graffiti_vr/GraffitiVR/bin/Debug/netcoreapp2.0/GraffitiVR.deps.json
+/home/mrosario/dev/graffiti_vr/GraffitiVR/bin/Debug/netcoreapp2.0/GraffitiVR.runtimeconfig.json
+/home/mrosario/dev/graffiti_vr/GraffitiVR/bin/Debug/netcoreapp2.0/GraffitiVR.runtimeconfig.dev.json
+/home/mrosario/dev/graffiti_vr/GraffitiVR/bin/Debug/netcoreapp2.0/GraffitiVR.dll
+/home/mrosario/dev/graffiti_vr/GraffitiVR/bin/Debug/netcoreapp2.0/GraffitiVR.pdb
+/home/mrosario/dev/graffiti_vr/GraffitiVR/obj/Debug/netcoreapp2.0/GraffitiVR.csproj.CoreCompileInputs.cache
+/home/mrosario/dev/graffiti_vr/GraffitiVR/obj/Debug/netcoreapp2.0/GraffitiVR.AssemblyInfoInputs.cache
+/home/mrosario/dev/graffiti_vr/GraffitiVR/obj/Debug/netcoreapp2.0/GraffitiVR.AssemblyInfo.cs
+/home/mrosario/dev/graffiti_vr/GraffitiVR/obj/Debug/netcoreapp2.0/GraffitiVR.dll
+/home/mrosario/dev/graffiti_vr/GraffitiVR/obj/Debug/netcoreapp2.0/GraffitiVR.pdb
+/home/mrosario/dev/graffiti_vr/GraffitiVR/bin/Debug/netcoreapp2.0/GraffitiVR.Model.dll
+/home/mrosario/dev/graffiti_vr/GraffitiVR/bin/Debug/netcoreapp2.0/GraffitiVR.Model.pdb

@@ -1,0 +1,150 @@
+@model GraffitiVR.Model.Sketch
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<script>
+function handleSave(){
+    var txtCode = document.getElementById("Code");
+    txtCode.value = editor.getValue(); 
+    document.forms[0].submit();
+}
+
+function formIsOkay(model){
+    if(model.Name == ""){
+        alert("Name is required.")
+        return false;
+    }
+
+    if(model.Code == ""){
+        alert("Code is required.")
+        return false;
+    }
+
+
+    return true;
+}
+
+
+function saveRecord(bitView){
+        var txtName = document.getElementById("Name");
+        var txtCode = editor.getValue();
+        var txtTags = document.getElementById("Tags");
+        var strURL = "/Sketch/UpdateSketch";
+        var txtCreatedBy = document.getElementById("CreatedBy");
+        var txtCreatedAt = document.getElementById("CreatedAt");
+        var txtID = document.getElementById("Id");
+        var model = { 
+                      Id: txtID.value,
+                      Name: txtName.value, 
+                      Code: txtCode, 
+                      Tags: txtTags.value,
+                      CreatedBy: txtCreatedBy.value,
+                      CreatedAt: txtCreatedAt.value  
+                      };
+
+        if(formIsOkay(model)){
+            $.ajax({
+                type: "POST",
+                contentType: 'application/json; charset=utf-8',
+                url: strURL,
+                dataType: "json",
+                data: JSON.stringify(model), 
+                success: function (data) {
+                    if(data.result == "ok"){
+                        //alert("Record saved.");
+                        if(bitView){
+                            window.open("/Sketch/ViewSketch/" + model.Id, "vr_window")
+                        }    
+                    }else{
+                        alert(data.result);
+                    }
+                },
+                error: function () 
+                {
+                    alert("An error has occured!!!");
+                }
+            });
+        }
+
+}
+</script>
+
+
+<h2>Edit Sketch</h2>
+
+<style>
+    #editor {
+        width:800px;
+        height:400px;
+    }
+    
+</style>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group">
+                <input type="button" value="Save" class="btn btn-default" onclick="saveRecord(false)" />
+                <input type="button" value="Save and View" class="btn btn-default" onclick="saveRecord(true)" />
+            </div>
+  
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Code" class="control-label"></label>
+                <textarea asp-for="Code" class="form-control" style="display:none;"></textarea>
+                <span asp-validation-for="Code" class="text-danger"></span>
+                <div>
+                <pre id="editor">@Html.DisplayFor(model => model.Code)</pre>
+                <script src="/lib/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+                <script>
+                    var editor = ace.edit("editor");
+                    editor.setTheme("ace/theme/twilight");
+                    editor.session.setMode("ace/mode/javascript");
+                    editor.getSession().on('change', function(e) {
+                        var txtCode = document.getElementById("Code");
+                        txtCode.value = editor.getValue(); 
+                    });
+                </script>
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Tags" class="control-label"></label>
+                <input asp-for="Tags" class="form-control" />
+                <span asp-validation-for="Tags" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="CreatedBy" class="control-label"></label>
+                <input asp-for="CreatedBy" class="form-control" />
+                <span asp-validation-for="CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group"  style="display:none;">
+                <label asp-for="CreatedAt" class="control-label"></label>
+                <input asp-for="CreatedAt" class="form-control" />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+
+            
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
