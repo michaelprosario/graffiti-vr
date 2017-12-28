@@ -232,11 +232,12 @@ function Bot()
 
 
 //================================================================================
+   
 
 	this.forward = function(steps)
-	{
-		var deltaX = steps * Math.cos(this.angle);
-		var deltaZ = steps * Math.sin(this.angle);
+    {
+        var deltaX = steps * Math.cos(this.getAngleInRadians());
+        var deltaZ = steps * Math.sin(this.getAngleInRadians());
 
 		this.positionX += deltaX;
 		this.positionZ += deltaZ;
@@ -246,8 +247,8 @@ function Bot()
 
 	this.moveLeft = function(steps)
  	{
-		var deltaX = steps * Math.cos(this.angle - (Math.PI/2));
-		var deltaZ = steps * Math.sin(this.angle- (Math.PI/2));
+        var deltaX = steps * Math.cos(this.getAngleInRadians() - (Math.PI/2));
+        var deltaZ = steps * Math.sin(this.getAngleInRadians()- (Math.PI/2));
 
 		this.positionX += deltaX;
 		this.positionZ += deltaZ;
@@ -263,16 +264,22 @@ function Bot()
 //================================================================================
 
 	this.setAngle = function(degrees)
-	{
-		this.angle = degrees*Math.PI/180;
+    {
+        this.angle = degrees;
 	}
 
 //================================================================================
 
 	this.getAngle = function()
-	{
-		return 180*this.angle/Math.PI;
+    {
+        return this.angle;
 	}
+
+//================================================================================
+
+    this.getAngleInRadians = function () {
+        return (this.angle * Math.PI)/180;
+    }
 
 //================================================================================
 

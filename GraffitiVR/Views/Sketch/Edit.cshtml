@@ -4,82 +4,14 @@
     ViewData["Title"] = "Edit";
 }
 
-<script>
-function handleSave(){
-    var txtCode = document.getElementById("Code");
-    txtCode.value = editor.getValue(); 
-    document.forms[0].submit();
-}
-
-function formIsOkay(model){
-    if(model.Name == ""){
-        alert("Name is required.")
-        return false;
-    }
-
-    if(model.Code == ""){
-        alert("Code is required.")
-        return false;
-    }
-
-
-    return true;
-}
-
-
-function saveRecord(bitView){
-        var txtName = document.getElementById("Name");
-        var txtCode = editor.getValue();
-        var txtTags = document.getElementById("Tags");
-        var strURL = "/Sketch/UpdateSketch";
-        var txtCreatedBy = document.getElementById("CreatedBy");
-        var txtCreatedAt = document.getElementById("CreatedAt");
-        var txtID = document.getElementById("Id");
-        var model = { 
-                      Id: txtID.value,
-                      Name: txtName.value, 
-                      Code: txtCode, 
-                      Tags: txtTags.value,
-                      CreatedBy: txtCreatedBy.value,
-                      CreatedAt: txtCreatedAt.value  
-                      };
-
-        if(formIsOkay(model)){
-            $.ajax({
-                type: "POST",
-                contentType: 'application/json; charset=utf-8',
-                url: strURL,
-                dataType: "json",
-                data: JSON.stringify(model), 
-                success: function (data) {
-                    if(data.result == "ok"){
-                        //alert("Record saved.");
-                        if(bitView){
-                            window.open("/Sketch/ViewSketch/" + model.Id, "vr_window")
-                        }    
-                    }else{
-                        alert(data.result);
-                    }
-                },
-                error: function () 
-                {
-                    alert("An error has occured!!!");
-                }
-            });
-        }
-
-}
-</script>
-
-
+<script src="/js/sketch-edit.js"></script>
 <h2>Edit Sketch</h2>
 
 <style>
     #editor {
         width:800px;
         height:400px;
-    }
-    
+    }  
 </style>
 
 <div class="row">

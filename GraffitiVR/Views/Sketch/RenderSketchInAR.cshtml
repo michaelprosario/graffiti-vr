@@ -1,0 +1,33 @@
+﻿@model GraffitiVR.Model.Sketch
+
+@{
+    Layout = "";
+    ViewBag.Title = "RenderSketch";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <script src="~/Scripts/aframe.min.js"></script>
+    <script src="~/Scripts/aframe-ar.js"></script>  
+    <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+    <script src="~/Scripts/bot_aframe.js"></script>
+
+    <script>
+        AFRAME.registerComponent('botdraw', {
+          schema: {type: 'string'},
+          init: function () {
+	        @Html.Raw(Model.Code)
+          }
+        });
+    </script>
+</head>
+<body>
+
+    <a-scene botdraw="true"  embedded artoolkit="sourceType: webcam;">
+        <a-entity light="color: #white; intensity: 1.5" position="-10 10 -10"></a-entity>
+        <a-marker-camera preset="hiro"></a-marker-camera>
+    </a-scene>
+</body>
+</html>

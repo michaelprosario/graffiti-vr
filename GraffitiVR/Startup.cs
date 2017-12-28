@@ -44,6 +44,8 @@ namespace GraffitiVR
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
     }
 }
