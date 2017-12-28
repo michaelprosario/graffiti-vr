@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GraffitiVR.Model
 {
-
     public class Sketch{
 
         public Sketch(){
@@ -24,8 +23,5 @@ namespace GraffitiVR.Model
         public string UpdatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-
-
-
     }
 }

@@ -20,6 +20,10 @@ namespace GraffitiVR
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseKestrel(options =>
+                {
+                    options.Listen(new System.Net.IPAddress(new byte[]{0,0,0,0}), 5000);
+                })
                 .Build();
     }
 }

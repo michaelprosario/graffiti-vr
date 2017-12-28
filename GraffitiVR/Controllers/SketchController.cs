@@ -23,13 +23,11 @@ namespace GraffitiVR.Controllers
             sketchRepo = new SketchRepo(user);
         }
 
-        // GET: Sketch
         public IActionResult Index()
         {
             return View(sketchRepo.GetAll());
         }
 
-        // GET: Sketch/Create
         public IActionResult Create()
         {
             Sketch aSketch = new Sketch();
@@ -48,26 +46,8 @@ for(i=0; i<10; i++){
             return RedirectToAction("Edit", new { id = recordID });
         }
 
-        // POST: Sketch/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Code,Name,Tags")] Sketch sketch)
-        {
-            if (ModelState.IsValid)
-            {
-                sketch.Type = "javascript";
-                sketchRepo.Add(sketch);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(sketch);
-        }
-
-        // GET: Sketch/Edit/5
         public IActionResult Edit(int id)
         {
-
             var sketch = sketchRepo.GetRecord(id);
             if (sketch == null)
             {
@@ -75,69 +55,25 @@ for(i=0; i<10; i++){
             }
             return View(sketch);
         }
-
-        public IActionResult ViewSketch(int id)
-        {
-            var sketch = sketchRepo.GetRecord(id);
-            if (sketch == null)
-            {
-                return NotFound();
-            }
-
-            //Console.WriteLine(sketch.Code);
-            ViewBag.Code = sketch.Code;
-            return View(sketch);
-        }
-        
-
-        // POST: Sketch/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("Id,Code,Name,Tags,CreatedBy,CreatedAt")] Sketch sketch)
-        {
-            if (id != sketch.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    sketch.Type = "javascript";
-                    sketchRepo.Update(sketch);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!SketchExists(sketch.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(sketch);
-        }
-
+          
         [HttpPost]
         public JsonResult UpdateSketch([FromBody]Sketch sketch)
         {
+
+            var oldRecordState = sketchRepo.GetRecord(sketch.Id);
+            sketch.CreatedAt = oldRecordState.CreatedAt;
+            sketch.CreatedBy = oldRecordState.CreatedBy;
+            sketch.UpdatedAt = DateTime.Now;
+            sketch.UpdatedBy = oldRecordState.UpdatedBy;
+
             try
             {
-                sketch.Type = "javascript";
                 sketch.UpdatedBy = getCurrentUser();
                 sketchRepo.Update(sketch);
                 return Json(new { result = "ok"} );
             }
             catch (DbUpdateConcurrencyException)
             {
-
                 if (!SketchExists(sketch.Id))
                 {
                     return Json(new { result = "record_not_found"} );
@@ -149,13 +85,8 @@ for(i=0; i<10; i++){
             }
         }  
         
-
-
-        // GET: Sketch/Delete/5
         public IActionResult Delete(int id)
         {
-
-            
             if (!sketchRepo.RecordExists(id))
             {
                 return NotFound();
@@ -166,7 +97,6 @@ for(i=0; i<10; i++){
             return View(sketch);
         }
 
-        // POST: Sketch/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
@@ -179,5 +109,57 @@ for(i=0; i<10; i++){
         {
             return sketchRepo.RecordExists(id);
         }
+
+        public ActionResult CreateBlockly()
+        {
+            var record = new Sketch();
+            record.Name = $"Blockly Sketch - {DateTime.Now}";
+            record.Code = "//code goes here";
+            record.BlocklyXml = "";
+            record.Tags = "";
+            record.Type = "blockly";
+
+            int id = sketchRepo.Add(record);
+
+            return RedirectToAction("EditBlockly", new { id = id });
+        }
+
+        public ActionResult EditBlockly(int id)
+        {
+            if (!sketchRepo.RecordExists(id))
+            {
+                return NotFound();
+            }
+            
+            var record = sketchRepo.GetRecord(id);
+            return View(record);
+        }
+
+        public ActionResult RenderSketch(int id)
+        {
+            if (!sketchRepo.RecordExists(id))
+            {
+                return NotFound();
+            }
+            
+            var record = sketchRepo.GetRecord(id);
+            return View(record);
+        }
+    
+        public ActionResult RenderSketchInAR(int id)
+        {
+            if (!sketchRepo.RecordExists(id))
+            {
+                return NotFound();
+            }
+            
+            var record = sketchRepo.GetRecord(id);
+            return View(record);
+        }
+
+        public ActionResult SampleCode(){
+            return View();
+        }
+        
     }
 }
