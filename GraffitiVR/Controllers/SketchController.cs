@@ -14,7 +14,7 @@ namespace GraffitiVR.Controllers
         private readonly SketchRepo sketchRepo;
         
         string getCurrentUser(){
-            return "mrosario";
+            return "system";
         }
 
         public SketchController()
