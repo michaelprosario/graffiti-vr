@@ -1,9 +1,9 @@
-- back to sketches button at top
-    - js
-    - blockly
+x - sketches screen / view link on each record.
+x - back to sketches button at top
+    x- js
+    x- blockly
+x - blockly screen / learn how to load obj file
 
 - sketches screen / if no records, invite user to create sketch
-- sketches screen / view link on each record.
 - learn how to do auth/identity in asp.net mvc app
 - blockly screen / learn how to create text
-- blockly screen / learn how to load obj file

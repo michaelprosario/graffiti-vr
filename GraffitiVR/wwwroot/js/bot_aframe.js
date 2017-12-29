@@ -20,7 +20,7 @@ function Bot()
 	this.angle = 0;
 	this.positionX = 0;
 	this.positionY = 0;
-	this.positionZ = 20;
+	this.positionZ = 0;
 	this.drawColor = "red";
 	var sceneEl = document.querySelector('a-scene');
 
@@ -73,10 +73,6 @@ function Bot()
 		entityEl.setAttribute('rotation', {x: 0, y: cubeRotationY, z: 0});
 		entityEl.setAttribute('material', 'color', this.drawColor);
 		entityEl.setAttribute('bot_element', true);
-		
-
-    
-
 
 		sceneEl.appendChild(entityEl);
 
@@ -150,7 +146,6 @@ function Bot()
 
 //================================================================================
 
-
 	this.drawCylinder = function(radius,height)
 	{
 		var entityEl = document.createElement('a-entity');
@@ -183,8 +178,6 @@ function Bot()
 
 		});
 
-
-
 		entityEl.setAttribute('position', {x: x, y: y, z: z});
 		entityEl.setAttribute('src', strPath);
 		entityEl.setAttribute('bot_element', true);
@@ -194,46 +187,13 @@ function Bot()
 	
 //================================================================================
 	
-
-	this.drawImage = function(strPath,width,height)
-	{
-		var entityEl = document.createElement('a-image');
-		entityEl.setAttribute('geometry', {
-		  height: height,
-		  width: width
-
-		});
-
-
-
-		entityEl.setAttribute('src', strPath);
-		entityEl.setAttribute('bot_element', true);
-
-		var cubeX = this.positionX;
-		var cubeY = this.positionY;
-		var cubeZ = this.positionZ;
-		var cubeRotationY = this.angle;
-	
-		entityEl.setAttribute('position', {x: cubeX, y: cubeY, z: cubeZ});
-		entityEl.setAttribute('rotation', {x: 0, y: cubeRotationY, z: 0});
-		
-		
-
-		sceneEl.appendChild(entityEl);
-	}
-
-	
-//================================================================================
-
 	this.moveUp = function(steps)
 	{
 		this.positionY += steps;
 	}
 
-
 //================================================================================
    
-
 	this.forward = function(steps)
     {
         var deltaX = steps * Math.cos(this.getAngleInRadians());
@@ -241,6 +201,11 @@ function Bot()
 
 		this.positionX += deltaX;
 		this.positionZ += deltaZ;
+	}
+//================================================================================
+
+	this.moveForward = function(steps){
+		this.forward(steps);
 	}
 
 //================================================================================
@@ -327,7 +292,52 @@ function Bot()
 		sceneEl.appendChild(entityEl);	
 	}
 
+//================================================================================
 	
+this.drawModel = function(strModelName, strScaleParams, strRotationParams)
+{
+	var entityEl = document.createElement('a-entity');
+
+	var strObjModel = "obj: url(/models/" +strModelName+  ".obj); ";
+	strObjModel +=    "mtl: url(/models/" +strModelName+  ".mtl); ";
+	//console.log(strObjModel);
+
+	entityEl.setAttribute('obj-model', strObjModel);
+	entityEl.setAttribute('bot_element', true);
+
+	var cubeX = this.positionX;
+	var cubeY = this.positionY;
+	var cubeZ = this.positionZ;
+	var cubeRotationY = this.angle;
+
+	entityEl.setAttribute('position', {x: cubeX, y: cubeY, z: cubeZ});
+	entityEl.setAttribute('rotation', strRotationParams);
+	entityEl.setAttribute('scale', strScaleParams);
+
+	sceneEl.appendChild(entityEl);
+}
+
+//================================================================================
+
+this.drawImage = function(strPath, strScaleParams, strRotationParams)
+{
+	var entityEl = document.createElement('a-image');
+	
+	entityEl.setAttribute('src', strPath);
+	entityEl.setAttribute('bot_element', true);
+
+	var cubeX = this.positionX;
+	var cubeY = this.positionY;
+	var cubeZ = this.positionZ;
+	var cubeRotationY = this.angle;
+
+	entityEl.setAttribute('position', {x: cubeX, y: cubeY, z: cubeZ});
+	entityEl.setAttribute('rotation', strRotationParams);
+	entityEl.setAttribute('scale', strScaleParams);
+	
+	sceneEl.appendChild(entityEl);
+}
+
 
 	
 

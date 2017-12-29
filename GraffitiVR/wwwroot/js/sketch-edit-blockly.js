@@ -1,4 +1,10 @@
-﻿$(function () {
+﻿function closeRecord(){
+    window.location = "/sketch/";
+}
+
+// ====================================================================================================
+
+$(function () {
     //Blockly.inject(document.getElementById('blocklyDiv'), { toolbox: document.getElementById('toolbox') });
 
     var txtBlocklyXML = document.getElementById("txtBlocklyXML");

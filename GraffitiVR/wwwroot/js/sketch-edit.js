@@ -66,3 +66,7 @@ function saveRecord(bitView) {
     }
 
 }
+
+function closeRecord(){
+    window.location = "/sketch/";
+}

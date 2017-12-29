@@ -18,12 +18,17 @@
     function newBlocklySketch() {
         window.open("/sketch/createblockly", "_blank");
     }
+
+    function view(id){
+        window.open("/sketch/RenderSketch/" + id,"_blank");
+    }
 </script>
 
 <p>
     <input type="button"  value="New Sketch" class="btn btn-default" onclick="newSketch()" />
     <input type="button" value="New Blockly Sketch" class="btn btn-default" onclick="newBlocklySketch()" />
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -44,7 +49,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            <a href="Edit/@item.Id">
             @Html.DisplayFor(modelItem => item.Name)
+            </a>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tags)
@@ -63,8 +70,8 @@
                 {
                     @Html.ActionLink("Edit", "EditBlockly", new { id = item.Id })
                 }
-                |
-            <a href="javascript:deleteRecord('@item.Id')">Delete</a>
+                | <a href="javascript:view('@item.Id')">View</a>
+                | <a href="javascript:deleteRecord('@item.Id')">Delete</a>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Type)
