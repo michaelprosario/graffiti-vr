@@ -49,9 +49,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            <a href="Edit/@item.Id">
-            @Html.DisplayFor(modelItem => item.Name)
-            </a>
+        @if (item.Type != "blockly") {
+            @Html.ActionLink(item.Name, "Edit", new { id = item.Id })
+        }
+        else
+        {
+            @Html.ActionLink(item.Name, "EditBlockly", new { id = item.Id })
+        }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tags)

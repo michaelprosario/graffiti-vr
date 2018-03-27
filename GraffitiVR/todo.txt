@@ -3,7 +3,9 @@ x - back to sketches button at top
     x- js
     x- blockly
 x - blockly screen / learn how to load obj file
-
+x- need to fix the loading of 3d models
 - sketches screen / if no records, invite user to create sketch
 - learn how to do auth/identity in asp.net mvc app
 - blockly screen / learn how to create text
+- need to document javascript api
+- need to exclude binary stuff from this repo
