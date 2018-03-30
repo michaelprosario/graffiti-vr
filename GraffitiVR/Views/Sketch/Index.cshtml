@@ -38,8 +38,11 @@
             @Html.DisplayNameFor(model => model.Tags)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedBy)
+            &nbsp;
         </th>
+        <th>
+            Code type
+        </th>        
         <th>
             @Html.DisplayNameFor(model => model.CreatedAt)
         </th>
@@ -61,12 +64,6 @@
             @Html.DisplayFor(modelItem => item.Tags)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CreatedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedAt)
-        </td>
-        <td>
                 @if (item.Type != "blockly") {
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id })
                 }
@@ -80,6 +77,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.Type)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedAt)
+        </td>
+        
     </tr>
 }
 

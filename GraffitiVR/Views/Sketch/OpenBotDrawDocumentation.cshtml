@@ -1,0 +1,55 @@
+
+
+@{
+    ViewData["Title"] = "Bot Draw Documentation";
+}
+
+<h2>Bot Draw API Documentation</h2>
+
+In order to draw, you start by creating a bot.
+
+<xmp>    
+// This is how you create a bot!    
+var bot = new Bot();  
+var i;
+
+// You can move and draw your bot in 3D space
+for(i=0; i<10; i++){
+    bot.drawBox(1,1,1);
+    bot.moveUp(2);
+}    
+</xmp>
+
+The bot object has additional methods for drawing, turning, or moving.
+<br>
+<span style="text-decoration: underline;">Moving and turning</span>:<br>
+<ul>
+ 	<li>moveUp(steps) - Move the bot upward a few steps</li>
+ 	<li>forward(steps) - Move bot forward a few steps</li>
+ 	<li>moveLeft(steps) - Move bot left</li>
+ 	<li>moveRight(steps) - Move bot right</li>
+ 	<li>setAngle(degrees) - Set angle of direction for the robot. Enter direction in degrees</li>
+ 	<li>getAngle() - Get current angle for the robot.</li>
+ 	<li>turn(angle) - Turn the robot a few degrees.</li>
+</ul>
+<span style="text-decoration: underline;">Drawing stuff</span>:
+<ul>
+ 	<li>drawBoxAt(width,height,depth,x,y,z) - Draw box at a particular location.</li>
+ 	<li>drawBox(width,height,depth) - Draw box at current robot location.</li>
+ 	<li>drawSphere(radius) - Draw sphere at current robot location.</li>
+ 	<li>drawSphereAt(radius,x,y,z) - Draw sphere at particular location</li>
+ 	<li>drawCone(radius,height)</li>
+ 	<li>drawCylinder(radius,height)</li>
+ 	<li>drawImageAt(strPath,width, height, x,y,z) - Draw image at particular location. The path should be a fully qualified path to a valid web image.</li>
+ 	<li>drawImage(strPath,width,height) - Draw image at bot location. The path should be a fully qualified path to a valid web image.</li>
+</ul>
+<span style="text-decoration: underline;">Remember locations, Return to locations</span>
+<ul>
+ 	<li>saveLocation(locationName) - Store bot location and give it a name.</li>
+ 	<li>moveToLocation(locationName) - Return to location by name</li>
+</ul>
+<span style="text-decoration: underline;">Change colors:</span>
+
+bot.drawColor = "red"
+
+&nbsp;

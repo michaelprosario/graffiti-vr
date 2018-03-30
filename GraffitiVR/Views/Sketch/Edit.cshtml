@@ -10,7 +10,7 @@
 <style>
     #editor {
         width:800px;
-        height:400px;
+        height:300px;
     }  
 </style>
 
@@ -49,8 +49,11 @@
                     });
                 </script>
                 </div>
+                <div style="white-space:nowrap;">
+                    Need help understanding the bot draw API?  <a href="/Sketch/OpenBotDrawDocumentation" target="_docs">Check out our help page.</a>
+                </div>
+                
             </div>
-
             <div class="form-group">
                 <label asp-for="Tags" class="control-label"></label>
                 <input asp-for="Tags" class="form-control" />
@@ -66,8 +69,6 @@
                 <input asp-for="CreatedAt" class="form-control" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
             </div>
-
-            
         </form>
     </div>
 </div>

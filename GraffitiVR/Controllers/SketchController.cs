@@ -34,12 +34,14 @@ namespace GraffitiVR.Controllers
             aSketch.Name = "Sketch " + DateTime.Now;
             aSketch.Type = "javascript";
             aSketch.Code = @"
-var b = new Bot();
+// Let us create a bot
+var bot = new Bot();
 var i;
 
+// Using code, we can move and draw with the bot
 for(i=0; i<10; i++){
-    b.drawBox(1,1,1);
-    b.moveUp(2);
+    bot.drawBox(1,1,1);
+    bot.moveUp(2);
 }
             ";
             int recordID = sketchRepo.Add(aSketch);            
@@ -155,6 +157,10 @@ for(i=0; i<10; i++){
             
             var record = sketchRepo.GetRecord(id);
             return View(record);
+        }
+
+        public ActionResult OpenBotDrawDocumentation(){
+            return View();
         }
 
         public ActionResult SampleCode(){

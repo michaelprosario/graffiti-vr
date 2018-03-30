@@ -1,12 +1,3 @@
-C:/dev/graffiti-vr/GraffitiVR.Model/bin/Debug/netcoreapp2.0/GraffitiVR.Model.deps.json
-C:/dev/graffiti-vr/GraffitiVR.Model/bin/Debug/netcoreapp2.0/GraffitiVR.Model.dll
-C:/dev/graffiti-vr/GraffitiVR.Model/bin/Debug/netcoreapp2.0/GraffitiVR.Model.pdb
-C:/dev/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.csprojResolveAssemblyReference.cache
-C:/dev/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.csproj.CoreCompileInputs.cache
-C:/dev/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.AssemblyInfoInputs.cache
-C:/dev/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.AssemblyInfo.cs
-C:/dev/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.dll
-C:/dev/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.pdb
 /home/mrosario/tmp/graffiti-vr/GraffitiVR.Model/bin/Debug/netcoreapp2.0/GraffitiVR.Model.deps.json
 /home/mrosario/tmp/graffiti-vr/GraffitiVR.Model/bin/Debug/netcoreapp2.0/GraffitiVR.Model.dll
 /home/mrosario/tmp/graffiti-vr/GraffitiVR.Model/bin/Debug/netcoreapp2.0/GraffitiVR.Model.pdb
@@ -15,3 +6,11 @@ C:/dev/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.pdb
 /home/mrosario/tmp/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.AssemblyInfo.cs
 /home/mrosario/tmp/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.dll
 /home/mrosario/tmp/graffiti-vr/GraffitiVR.Model/obj/Debug/netcoreapp2.0/GraffitiVR.Model.pdb
+C:\dev\graffiti-vr\GraffitiVR.Model\bin\Debug\netcoreapp2.0\GraffitiVR.Model.deps.json
+C:\dev\graffiti-vr\GraffitiVR.Model\bin\Debug\netcoreapp2.0\GraffitiVR.Model.dll
+C:\dev\graffiti-vr\GraffitiVR.Model\bin\Debug\netcoreapp2.0\GraffitiVR.Model.pdb
+C:\dev\graffiti-vr\GraffitiVR.Model\obj\Debug\netcoreapp2.0\GraffitiVR.Model.csproj.CoreCompileInputs.cache
+C:\dev\graffiti-vr\GraffitiVR.Model\obj\Debug\netcoreapp2.0\GraffitiVR.Model.AssemblyInfoInputs.cache
+C:\dev\graffiti-vr\GraffitiVR.Model\obj\Debug\netcoreapp2.0\GraffitiVR.Model.AssemblyInfo.cs
+C:\dev\graffiti-vr\GraffitiVR.Model\obj\Debug\netcoreapp2.0\GraffitiVR.Model.dll
+C:\dev\graffiti-vr\GraffitiVR.Model\obj\Debug\netcoreapp2.0\GraffitiVR.Model.pdb
